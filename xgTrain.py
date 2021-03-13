@@ -25,11 +25,9 @@ def one_hot_encoding_data(data):
     return new_data
 
 
-def all_values_to_ones(data):
-    for index_i in range(len(data)):
-        for index_k in range(len(data[index_i])):
-            if abs(data[index_i][index_k]) != 1:
-                data[index_i][index_k] *= 2
+def all_values_to_ones(X):
+    X[X == 0.5] = 1
+    X[X == -0.5] = -1
 
 
 tree = 100
